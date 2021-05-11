@@ -17,9 +17,9 @@
 	- Scrollbar
 	- Header section
 	- Left section
-	- Center section 
+	- Center section
 	- Right section
-	- Statistics section	
+	- Statistics section
 	- Loading Section
 	- Footer section
 	- All Popups
@@ -28,7 +28,7 @@
 2.  Post a Job Page
 3.  Add New Product
 4.  Add New Course
-5.  All Jobs 
+5.  All Jobs
 6.  Learning
 7. 	Find Connections
 8. 	My Connections
@@ -60,13 +60,13 @@
 
 =============================================================*/
 
-/* ================================================================================== 
+/* ==================================================================================
  Google Fonts
 ===================================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap')
 
-/* ================================================================================== 
+/* ==================================================================================
 Reset Css
 ===================================================================================== */
 
@@ -79,8 +79,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -91,7 +91,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -247,7 +247,7 @@ h1 {
 	font-size: 3em;
 	/* 3x body copy size = 48px */
 	line-height: 1.05;
-	/* keep to a multiple of the 20px line height 
+	/* keep to a multiple of the 20px line height
 	and something more appropriate for display headings */
 }
 h2 {
@@ -733,7 +733,7 @@ input[type=email][disabled], input[type=url][disabled], input[type=password][dis
 	height: 40px;
 	border-radius: 50%;
 	-webkit-transition: all 300ms linear;
-	transition: all 300ms linear; 
+	transition: all 300ms linear;
 }
 .checkbox:not(:checked) + label:before {
 	content: '\eac1';
@@ -980,7 +980,7 @@ label:hover:before {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-    color: #142fdb !important;	
+    color: #142fdb !important;
 }
 
 .arrow-icon {
@@ -1514,7 +1514,7 @@ label:hover:before {
     font-size: 14px;
     font-weight: 500;
     color: #91699c;
-    margin-bottom: 10px;	
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -2475,7 +2475,7 @@ textarea.comment-textarea {
 .ul-ft-links li a {
     color: #91699c;
     font-size: 14px;
-    font-weight: 400;  
+    font-weight: 400;
 }
 
 .ul-ft-links li a:hover {
@@ -2510,7 +2510,7 @@ textarea.comment-textarea {
 .social-ft-links li a {
     color: #91699c;
     font-size: 14px;
-    font-weight: 400;  
+    font-weight: 400;
 }
 
 .social-ft-links li a:hover {
@@ -2527,7 +2527,7 @@ textarea.comment-textarea {
 .popup-wrapper5,
 .popup-wrapper6,
 .popup-wrapper7,
-.popup-wrapper8, 
+.popup-wrapper8,
 .popup-wrapper9,
 .popup-wrapper10,
 .popup-wrapper11,
@@ -2535,7 +2535,7 @@ textarea.comment-textarea {
 .popup-wrapper13,
 .popup-wrapper14,
 .popup-wrapper15,
-.popup-wrapper16, 
+.popup-wrapper16,
 .popup-wrapper17,
 .popup-wrapper18,
 .popup-wrapper19,
@@ -2559,7 +2559,7 @@ textarea.comment-textarea {
 .popup-wrapper37,
 .popup-wrapper38,
 .popup-wrapper39,
-.popup-wrapper40, 
+.popup-wrapper40,
 .popup-wrapper41,
 .popup-wrapper42 {
 	background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
@@ -2574,7 +2574,7 @@ textarea.comment-textarea {
 	-ms-opacity: 0;
 	-o-opacity: 0;
 	opacity: 1;
-	visibility: hidden;	
+	visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
 	transition: all 0.25s linear 0s;
@@ -2804,7 +2804,7 @@ textarea.comment-textarea {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
-	transform: scale(1.1); 
+	transform: scale(1.1);
 }
 
 .fb {
@@ -3440,7 +3440,7 @@ textarea.comment-textarea {
     overflow: hidden;
     line-height: 26px;
 }
-	
+
 .submit_btn {
     margin-top: 30px;
     text-align: right;
@@ -4651,7 +4651,7 @@ img.img-thumbnail {
     font-size: 18px !important;
     padding: 2px !important;
 }
-		
+
 .side-cart-header {
     background: #fff;
     color: #231f20;
@@ -4963,7 +4963,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .learning_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5009,7 +5009,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .newest_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5055,7 +5055,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .bestsellers_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5338,7 +5338,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .ppl_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5384,7 +5384,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .suggest_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5430,7 +5430,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .hash_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5476,7 +5476,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .group_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -5901,7 +5901,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .evtcate_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -6454,19 +6454,19 @@ img.img-thumbnail {
     touch-action: auto;
     overflow-y: scroll !important;
     -ms-overflow-style: none;
-	
+
 }
 
 .msg-container::-webkit-scrollbar {
 	width: 1px;
     visibility: hidden;
 }
- 
+
 .msg-container::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
     visibility: hidden;
 }
- 
+
 .msg-container::-webkit-scrollbar-thumb {
 	background-color: #f5f5f5;
 	outline: 1px solid #efefef;
@@ -7195,7 +7195,7 @@ img.img-thumbnail {
     background-image: url(../images/event-imgs/img-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;	
+    background-size: cover;
     border: 0;
 	padding: 105px 0 !important;
 }
@@ -7214,7 +7214,7 @@ img.img-thumbnail {
 }
 
 .main_img_view {
-	
+
 }
 
 .main-job-bg-circle {
@@ -7696,7 +7696,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .related_products_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -7706,7 +7706,7 @@ img.img-thumbnail {
 }
 
 .item-review {
-	
+
 }
 
 .item-review-heading {
@@ -7814,7 +7814,7 @@ img.img-thumbnail {
     vertical-align: top;
     width: 40px;
 	height: 40px;
-	
+
 }
 
 .item-comet-avatar img {
@@ -8022,7 +8022,7 @@ img.img-thumbnail {
 	font-size: 14px;
     font-weight: 400;
     margin-bottom: 5px;
-	color: #91699c;	
+	color: #91699c;
 }
 
 .icon-color-medium-check:before {
@@ -8408,7 +8408,7 @@ img.img-thumbnail {
 	opacity: 1;
 	background: #142fdb !important;
 	border: 1px solid #142fdb !important;
-}	
+}
 
 .related_courses_slider .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -8866,13 +8866,13 @@ img.img-thumbnail {
 .rating-stars ul {
   list-style-type:none;
   padding:0;
-  
+
   -moz-user-select:none;
   -webkit-user-select:none;
 }
 .rating-stars ul > li.star {
   display:inline-block;
-  
+
 }
 
 /* Idle State of the stars */
@@ -9290,7 +9290,7 @@ a.nav-icon-list:hover {
     display: inline-block;
 }
 
-.item-username {
+.profile-description {
     font-size: 14px;
     font-weight: 400;
     color: #ffffff;
@@ -9705,7 +9705,7 @@ a.nav-icon-list:hover {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-/* --- Refunds Page --- */ 
+/* --- Refunds Page --- */
 
 .main-table .table {
     color: #231f20;
@@ -9910,7 +9910,7 @@ a.nav-icon-list:hover {
 }
 
 .refund-status {
-	
+
 }
 
 .refund-status p {
@@ -9982,7 +9982,7 @@ a.nav-icon-list:hover {
 /* --- My Profile Page --- */
 
 .item-total-link-group {
-    width: 350px;	
+    width: 350px;
     margin-top: 20px;
 }
 
@@ -10108,7 +10108,7 @@ a.nav-icon-list:hover {
 }
 
 .pf-deferred-dashboard_card-cate-section {
-    
+
 }
 
 .pf-dashboard-section__card-item {
@@ -10800,7 +10800,7 @@ a.nav-icon-list:hover {
 /* --- Setting Page --- */
 
 .setting-list li {
-    
+
 }
 
 .setting-list li a {
@@ -11864,7 +11864,7 @@ a.nav-icon-list:hover {
     opacity: 1;
 }
 
-/* --- About Page --- */ 
+/* --- About Page --- */
 
 .about-wrapper {
     padding: 60px 0;
@@ -12188,7 +12188,7 @@ a.nav-icon-list:hover {
 	margin-top: 43px !important;
 }
 
-/* --- Messages Page --- */ 
+/* --- Messages Page --- */
 
 .message-sidebar {
 	padding: 20px;
@@ -12570,7 +12570,7 @@ a.nav-icon-list:hover {
 	position: relative;
 }
 
-/* --- Signin and Signup Page --- */ 
+/* --- Signin and Signup Page --- */
 
 .app-form {
     -webkit-box-orient: horizontal;
@@ -12598,7 +12598,7 @@ a.nav-icon-list:hover {
 }
 
 .sign-logo img {
-    
+
 }
 
 .app-form-content {
@@ -13012,7 +13012,7 @@ a.nav-icon-list:hover {
     background: #142fdb;
 }
 
-/* --- Advertising Page --- */ 
+/* --- Advertising Page --- */
 
 .current-balance-dt {
     margin-bottom: 10px;
@@ -13044,7 +13044,7 @@ a.nav-icon-list:hover {
 	margin-bottom: 0;
 }
 
-/* --- Feedback Page --- */ 
+/* --- Feedback Page --- */
 
 .rating-container {
 	width: 100%;
@@ -13060,7 +13060,7 @@ a.nav-icon-list:hover {
 }
 
 .rating {
-  
+
 }
 
 .rating svg {
@@ -13124,7 +13124,7 @@ input[class="super-sad"]:focus + svg {
 	fill: rgb(239, 42, 16);
 }
 
-/* --- My Cart and Checkout Page --- */ 
+/* --- My Cart and Checkout Page --- */
 
 .cart_headtte14m {
     display: flex;
@@ -13306,7 +13306,7 @@ input[class="super-sad"]:focus + svg {
 }
 
 .order-collapse-btn:before {
-    font-family: 'Font Awesome 5 Free';  
+    font-family: 'Font Awesome 5 Free';
     content: "\f068";
 	color: #231f20;
 	font-size: 15px;
@@ -13315,7 +13315,7 @@ input[class="super-sad"]:focus + svg {
 }
 
 .order-collapse-btn.collapsed:before {
-    content: "\f067"; 
+    content: "\f067";
 }
 
 .total-price {
@@ -13474,7 +13474,7 @@ input[class="super-sad"]:focus + svg {
     text-decoration: underline !important;
 }
 
-/* --- Invoice Page --- */ 
+/* --- Invoice Page --- */
 
 .invoice-header {
     background: #142fdb;
@@ -13662,7 +13662,7 @@ input[class="super-sad"]:focus + svg {
     float: right;
 }
 
-/* --- Help Center Page --- */ 
+/* --- Help Center Page --- */
 
 .help-hero-search {
     margin-top: 57px;
@@ -13795,7 +13795,7 @@ input[class="super-sad"]:focus + svg {
     font-weight: 500;
 }
 
-/* --- Coming Soon Page --- */ 
+/* --- Coming Soon Page --- */
 
 .coming-soon {
 	min-height: 100vh;
@@ -13819,7 +13819,7 @@ input[class="super-sad"]:focus + svg {
 }
 
 .ct-logo img {
-   
+
 }
 
 .cmtk_dt {
@@ -13927,7 +13927,7 @@ input[class="super-sad"]:focus + svg {
 	margin-top: 0;
 	padding-top: 30px;
 	padding-bottom: 20px;
-	border-top: 1px solid #3147d6; 
+	border-top: 1px solid #3147d6;
 }
 
 .tc_footer_left ul li {
@@ -13985,7 +13985,7 @@ input[class="super-sad"]:focus + svg {
     background-color: #f5365c;
 }
 
-/* --- Error 404 Page --- */ 
+/* --- Error 404 Page --- */
 
 .error-bg {
 	min-height: 100vh;
@@ -14037,7 +14037,7 @@ input[class="super-sad"]:focus + svg {
     background-color: #f5365c;
 }
 
-/* --- Privacy Terms and Refunds Policy Page --- */ 
+/* --- Privacy Terms and Refunds Policy Page --- */
 
 .hero-greeting {
     font-size: 32px;
