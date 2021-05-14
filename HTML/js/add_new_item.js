@@ -38,4 +38,4 @@ add_item_button.addEventListener("click", function() {
   }).catch((error) => {
     console.error("Error adding document: ", error);
   });
-})
+});
