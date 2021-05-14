@@ -27,6 +27,11 @@
 		<link href="vendor/ckeditor5/sample/css/sample.css" rel="stylesheet">
 		<link href="vendor/uploader/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
 
+		<!-- Firestore  -->
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+		<script src="js/app.js"> </script>
+
 	</head>
 
 <body>
@@ -111,42 +116,42 @@
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">Item Title*</label>
-											<input class="form_input_1" type="text" placeholder="Item Title Here">
+											<input id="new_item_title_textbox" class="form_input_1" type="text" placeholder="Item Title Here">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">At what price do you want to sell the item?*</label>
-											<input class="form_input_1" type="text" placeholder="Item Price">
+											<input id="new_item_price_textbox" class="form_input_1" type="text" placeholder="Item Price">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">What is the size of the item?*</label>
-											<input class="form_input_1" type="text" placeholder="Item Size">
+											<input id="new_item_size_textbox" class="form_input_1" type="text" placeholder="Item Size">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">What is the condition of the item?*</label>
-											<input class="form_input_1" type="text" placeholder="Item Condition">
+											<input id="new_item_condition_textbox" class="form_input_1" type="text" placeholder="Item Condition">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">What is the brand of the item?</label>
-											<input class="form_input_1" type="text" placeholder="Item Brand">
+											<input id="new_item_brand_textbox" class="form_input_1" type="text" placeholder="Item Brand">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
 											<label class="label25">What is the color of the item?</label>
-											<input class="form_input_1" type="text" placeholder="Item Color">
+											<input id="new_item_color_textbox" class="form_input_1" type="text" placeholder="Item Color">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
@@ -239,7 +244,7 @@
 									</div>
 									<div class="col-lg-12">
 										<div class="submit_btn">
-											<button class="main-btn color btn-hover" data-ripple="">Submit for Review</button>
+											<button id="add_item_button" class="main-btn color btn-hover" type="button" data-ripple="">Add Item</button>
 										</div>
 									</div>
 								</div>
@@ -282,7 +287,7 @@
 	<script src="vendor/uploader/dist/js/jquery.dm-uploader.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/night-mode.js"></script>
-	<script>
+	<!-- <script>
 		ClassicEditor
 		.create( document.querySelector( '#pd_editor' ), {
 			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
@@ -293,7 +298,8 @@
 		.catch( err => {
 			console.error( err.stack );
 		} );
-	</script>
+	</script> -->
+	<script src="js/add_new_item.js"></script>
 
 </body>
 </html>
