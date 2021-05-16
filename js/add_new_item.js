@@ -1,6 +1,12 @@
 var db = firebase.firestore();
-
-var user_id = '1'; //we will need to properly implement this after we implement sign-up and log-in
+// var user = firebase.auth().currentUser;
+//
+// if (user == null) {
+//   location.href = 'sign_in.html';
+// }
+//
+// var user_id = user.uid;
+var user_id = '1';
 var items_collection_ref = db.collection("items");
 var user_my_closet = db.collection("users").doc(user_id);
 
@@ -12,7 +18,21 @@ const item_condition = document.querySelector("#new_item_condition_textbox");
 const item_brand = document.querySelector("#new_item_brand_textbox");
 const item_color = document.querySelector("#new_item_color_textbox");
 
-
+function uploadImage() {
+  console.log("hello");
+  const ref = firebase.storage().ref();
+  const file = document.querySelector("#browse-photo").files[0];
+  const name = new Date() + "-" + file.name;
+  const metadata = {
+    contentType: file.type
+  };
+  const task = ref.child(name).put(file, metadata);
+  task.then(snapshot => snapshot.ref.getDownloadURL())
+      .then(url => {
+          console.log(url);
+          document.querySelector("#image").src = url;
+      }).catch(console.error);
+}
 
 add_item_button.addEventListener("click", function() {
   const title_value = item_title.value;
@@ -50,23 +70,36 @@ add_item_button.addEventListener("click", function() {
     document.getElementById("missing-condition-new-item").style.visibility = "hidden";
   }
 
-  items_collection_ref.add({ //this adds the new item to the "items" collection
-    title: title_value,
-    price: price_value,
-    size: size_value,
-    condition: condition_value,
-    brand: brand_value,
-    color: color_value
-  }).then((docRef) => { //this adds the item to the user's closet
-    user_my_closet.update({
-      my_closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
-    }).then((docRef)=> {
-      console.log("Item added to closet");
-    }).catch((error) => {
-      console.error("Error adding document: ", error);
-    });
-    console.log("Item written with ID: ", docRef.id);
-  }).catch((error) => {
-    console.error("Error adding document: ", error);
-  });
+  const ref = firebase.storage().ref();
+  const file = document.querySelector("#browse-photo").files[0];
+  const name = new Date() + "-" + file.name;
+  const metadata = {
+    contentType: file.type
+  };
+  const task = ref.child(name).put(file, metadata);
+  task.then(snapshot => snapshot.ref.getDownloadURL())
+      .then(url => {
+          items_collection_ref.add({ //this adds the new item to the "items" collection
+            title: title_value,
+            price: price_value,
+            size: size_value,
+            condition: condition_value,
+            brand: brand_value,
+            color: color_value,
+            photo: url,
+            user: user_id
+          }).then((docRef) => { //this adds the item to the user's closet
+            user_my_closet.update({
+              my_closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+            }).then((docRef)=> {
+              console.log("Item added to closet");
+            }).catch((error) => {
+              console.error("Error adding document: ", error);
+            });
+
+            console.log("Item written with ID: ", docRef.id);
+          }).catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+      }).catch(console.error);
 });
