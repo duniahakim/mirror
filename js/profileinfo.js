@@ -20,10 +20,10 @@ save_changes.addEventListener("click", function() {};
   const about_value = about.value;
 
    user_info.update({
-    name: first_value,
-    last name: last_value,
-    email: email_value,
-    venmo: venmo_value,
+    first_name: first_value,
+    last_name: last_value,
+    Email: email_value,
+    Venmo_username: venmo_value,
     about: about_value,
 
   }).then((docRef) => { //this adds the item to the user's closet
