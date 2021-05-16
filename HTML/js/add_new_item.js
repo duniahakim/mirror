@@ -12,6 +12,8 @@ const item_condition = document.querySelector("#new_item_condition_textbox");
 const item_brand = document.querySelector("#new_item_brand_textbox");
 const item_color = document.querySelector("#new_item_color_textbox");
 
+
+
 add_item_button.addEventListener("click", function() {
   const title_value = item_title.value;
   const price_value = item_price.value;
@@ -19,6 +21,35 @@ add_item_button.addEventListener("click", function() {
   const condition_value = item_condition.value;
   const brand_value = item_brand.value;
   const color_value = item_color.value;
+
+  if (!title_value) {
+    document.getElementById("missing-title-new-item").style.visibility = "visible";
+    window.scrollTo(0, 0);
+   } else {
+    document.getElementById("missing-title-new-item").style.visibility = "hidden";
+   }
+
+  if (!price_value) {
+    document.getElementById("missing-price-new-item").style.visibility = "visible";
+    window.scrollTo(0, 0);
+  } else {
+    document.getElementById("missing-price-new-item").style.visibility = "hidden";
+  }
+
+  if (!size_value) {
+    document.getElementById("missing-size-new-item").style.visibility = "visible";
+    window.scrollTo(0, 0);
+  } else {
+    document.getElementById("missing-size-new-item").style.visibility = "hidden";
+  }
+
+  if (!condition_value) {
+    document.getElementById("missing-condition-new-item").style.visibility = "visible";
+    window.scrollTo(0, 0);
+  } else {
+    document.getElementById("missing-condition-new-item").style.visibility = "hidden";
+  }
+
   items_collection_ref.add({ //this adds the new item to the "items" collection
     title: title_value,
     price: price_value,
