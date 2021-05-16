@@ -17,6 +17,7 @@
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/responsive.css" rel="stylesheet">
 		<link href="css/night-mode.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
 
 		<!-- Vendor Stylesheets -->
 		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -115,28 +116,28 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
-											<label class="label25">Item Title*</label>
+											<label class="label25">Item Title* <span class="missing" id="missing-title-new-item">This information is missing! </span> </label>
 											<input id="new_item_title_textbox" class="form_input_1" type="text" placeholder="Item Title Here">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
-											<label class="label25">At what price do you want to sell the item?*</label>
+											<label class="label25">At what price do you want to sell the item?* <span class="missing" id="missing-price-new-item">This information is missing! </span></label>
 											<input id="new_item_price_textbox" class="form_input_1" type="text" placeholder="Item Price">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
-											<label class="label25">What is the size of the item?*</label>
+											<label class="label25">What is the size of the item?* <span class="missing" id="missing-size-new-item">This information is missing! </span></label>
 											<input id="new_item_size_textbox" class="form_input_1" type="text" placeholder="Item Size">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="form_group mt-30">
-											<label class="label25">What is the condition of the item?*</label>
+											<label class="label25">What is the condition of the item?* <span class="missing" id="missing-condition-new-item">This information is missing! </span></label>
 											<input id="new_item_condition_textbox" class="form_input_1" type="text" placeholder="Item Condition">
 											<!-- <span class="alt-text">(Please make this a maximum of 100 characters and unique.)</span> -->
 										</div>
@@ -235,13 +236,14 @@
 									</div> -->
 									<div class="col-lg-12">
 										<div class="terms-dt">
-											<p>I agree that ... </p>
-											<div class="agree_checkbox">
+											<p> By adding this item, I agree that the information I inputted is accurate. </p>
+											<!-- <div class="agree_checkbox">
 												<input type="checkbox" id="term_check">
-												<label for="term_check">I agree</label>
-											</div>
+												<label for="term_check">By adding this item, I agree that the information I specified is accurate.</label>
+											</div> -->
 										</div>
 									</div>
+
 									<div class="col-lg-12">
 										<div class="submit_btn">
 											<button id="add_item_button" class="main-btn color btn-hover" type="button" data-ripple="">Add Item</button>
