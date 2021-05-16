@@ -1,5 +1,3 @@
-/* ====== Index ======
-
 var db = firebase.firestore();
 
 const first_name_textbox = document.querySelector("#first_name_textbox");
