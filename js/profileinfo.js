@@ -7,6 +7,7 @@ const last_name_textbox = document.querySelector("#last_name_textbox");
 const email_textbox = document.querySelector("#email_textbox");
 const venmo_username = document.querySelector("#venmo_username");
 const about = document.querySelector("#about");
+const save_changes = document.querySelector("#save_changes_button");
 
 var users_collection_ = db.collection("users");
 var user_info = db.collection("users").doc("profileinfo");
