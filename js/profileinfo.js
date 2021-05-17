@@ -31,8 +31,8 @@ save_changes.addEventListener("click", function() {
     Venmo_username: venmo_value,
     about: about_value,
 
-  }).then((docRef) => { //this adds the item to the user's closet
-    console.log("Item written with ID: ", docRef.id);
+  }).then(() => {
+    console.log("Document successfully updated!");
   }).catch((error) => {
     console.error("Error adding value: ", error);
   });
