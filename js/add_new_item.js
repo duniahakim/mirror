@@ -6,10 +6,8 @@ var db = firebase.firestore();
 // }
 //
 // var user_id = user.uid;
-// var user_email = user.email;
 
 var user_id = 'profileinfo';
-var user_email = 'duniahakim@gmail.com';
 var items_collection_ref = db.collection("items");
 var user_my_closet = db.collection("users").doc(user_id);
 
@@ -91,7 +89,6 @@ add_item_button.addEventListener("click", function() {
             color: color_value,
             photo: url,
             user: user_id,
-            user_email: user_email,
             comments: []
           }).then((docRef) => { //this adds the item to the user's closet
             user_my_closet.update({
