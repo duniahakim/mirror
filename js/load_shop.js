@@ -5,7 +5,7 @@ var db = firebase.firestore();
 //   location.href = 'sign_in.html';
 // }
 // var user_id = user.uid;
-var user_id = '1';
+var user_id = 'profileinfo';
 
 // db.collection('users').doc(user_id).get().then((doc) => {
 //     if (! doc.exists) {
@@ -14,7 +14,9 @@ var user_id = '1';
 //         first_name: user.displayName,
 //         last_name: '',
 //         about: '',
-//         Venmo_username: ''
+//         Venmo_username: '',
+//         closet: [],
+//         saved: []
 //       });
 //     }
 // }).catch((error) => {

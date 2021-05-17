@@ -28,6 +28,8 @@
 		<!-- Firestore  -->
 		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
 		<script src="js/app.js"> </script>
 
 	</head>
@@ -134,103 +136,18 @@
 								<div class="col-lg-12">
 									<div class="full-width mt-30">
 										<div class="recent-items my_portfolio_list">
-											<div class="jobs-list">
-												<div class="product-item">
-													<div class="product-left">
-														<a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src="images/products-imgs/img-2.jpg" alt=""></a>
-													</div>
-													<div class="product-body">
-														<a href="my_product_detail_view.html" class="job-heading pt-0">Cursus - LMS &amp; Online Courses Marketplace HTML Template</a>
-														<p class="notification-text font-small-4">
-															<a href="#" class="cmpny-dt2">Joginder Singh</a>
-														</p>
-														<div class="item-price524">
-															<span class="product-portfolio-price">$18<ins class="ppdtotal-sales">314 Sales</ins></span>
-														</div>
-														<div class="portfolio_actions">
-															<a href="#" class="product-btn-action">Delete</a>
-														</div>
-													</div>
-												</div>
-												<div class="product-item">
-													<div class="product-left">
-														<a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src="images/products-imgs/img-5.jpg" alt=""></a>
-													</div>
-													<div class="product-body">
-														<a href="my_product_detail_view.html" class="job-heading pt-0">Jobby - Job Portal Multi-Purpose Marketplace HTML Template</a>
-														<p class="notification-text font-small-4">
-															<a href="#" class="cmpny-dt2">Joginder Singh</a>
-														</p>
-														<div class="item-price524">
-															<span class="product-portfolio-price">$20<ins class="ppdtotal-sales">32 Sales</ins></span>
-														</div>
-														<div class="portfolio_actions">
-															<a href="#" class="product-btn-action">Delete</a>
-														</div>
-													</div>
-												</div>
-												<div class="product-item">
-													<div class="product-left">
-														<a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src="images/products-imgs/img-4.jpg" alt=""></a>
-													</div>
-													<div class="product-body">
-														<a href="my_product_detail_view.html" class="job-heading pt-0">Goeveni - Event Sharing Social Network Html Template</a>
-														<p class="notification-text font-small-4">
-															<a href="#" class="cmpny-dt2">Joginder Singh</a>
-														</p>
-														<div class="item-price524">
-															<span class="product-portfolio-price">$20<ins class="ppdtotal-sales">32 Sales</ins></span>
-														</div>
-														<div class="portfolio_actions">
-															<a href="#" class="product-btn-action">Delete</a>
-														</div>
-													</div>
-												</div>
-												<div class="product-item">
-													<div class="product-left">
-														<a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src="images/products-imgs/img-1.jpg" alt=""></a>
-													</div>
-													<div class="product-body">
-														<a href="my_product_detail_view.html" class="job-heading pt-0">Workwise - The Freelancer And Social Networking HTML Template</a>
-														<p class="notification-text font-small-4">
-															<a href="#" class="cmpny-dt2">Joginder Singh</a>
-														</p>
-														<div class="item-price524">
-															<span class="product-portfolio-price">$20<ins class="ppdtotal-sales">624 Sales</ins></span>
-														</div>
-														<div class="portfolio_actions">
-															<a href="#" class="product-btn-action">Delete</a>
-														</div>
-													</div>
-												</div>
-												<div class="product-item">
-													<div class="product-left">
-														<a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src="images/products-imgs/img-6.jpg" alt=""></a>
-													</div>
-													<div class="product-body">
-														<a href="my_product_detail_view.html" class="job-heading pt-0">Natto - Online Food Ordering Social Networking Html Template</a>
-														<p class="notification-text font-small-4">
-															<a href="#" class="cmpny-dt2">Joginder Singh</a>
-														</p>
-														<div class="item-price524">
-															<span class="product-portfolio-price">$20<ins class="ppdtotal-sales">78 Sales</ins></span>
-														</div>
-														<div class="portfolio_actions">
-															<a href="#" class="product-btn-action">Delete</a>
-														</div>
-													</div>
-												</div>
+											<div id='closet_box' class="jobs-list">
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="loading-btn">
+						<!-- <div class="loading-btn">
 							<button class="process-btn btn-hover" type="button">
 								No More Products
 							</button>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -260,6 +177,7 @@
 	<!-- Footer End -->
 
 	<!-- Javascripts -->
+	<script src="js/load_portfolio.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
@@ -269,7 +187,7 @@
 	<script src="js/night-mode.js"></script>
 
 	<!-- Javascripts -->
-  <script src="js/Profile_delete.js"></script>
+  <!-- <script src="js/Profile_delete.js"></script> -->
 
 
 </body>

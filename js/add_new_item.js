@@ -8,7 +8,7 @@ var db = firebase.firestore();
 // var user_id = user.uid;
 // var user_email = user.email;
 
-var user_id = '1';
+var user_id = 'profileinfo';
 var user_email = 'duniahakim@gmail.com';
 var items_collection_ref = db.collection("items");
 var user_my_closet = db.collection("users").doc(user_id);
