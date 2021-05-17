@@ -8,6 +8,22 @@ var db = firebase.firestore();
 var user_id = 'profileinfo';
 
 
+function delete_item(item_id) {
+  db.collection('items').doc(item_id).get().then((doc) => {
+    if (doc.exists) {
+      db.collection('items').doc(item_id).delete().then(() => {
+        db.collection('users').doc(user_id).update({
+          closet: firebase.firestore.FieldValue.arrayRemove(item_id)
+        });
+        console.log("Document successfully deleted!");
+        location.href = 'my_portfolio.html';
+      }).catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+    }
+  });
+}
+
 db.collection('users').doc(user_id).get().then((s) => {
   if (s.exists) {
     var first_name = s.data().first_name;
@@ -32,7 +48,7 @@ db.collection('users').doc(user_id).get().then((s) => {
                   <span class="product-portfolio-price">$` + doc.data().price + `</span>
                 </div>
                 <div class="portfolio_actions">
-                  <a href="#" class="product-btn-action">Delete</a>
+                  <a class="product-btn-action" type="button" onClick="delete_item(\'` + doc.id + `\')" > Delete </a>
                 </div>
               </div>
             </div>
@@ -46,6 +62,5 @@ db.collection('users').doc(user_id).get().then((s) => {
 
       n += 1;
     });
-
   }
 });

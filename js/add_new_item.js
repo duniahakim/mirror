@@ -95,7 +95,7 @@ add_item_button.addEventListener("click", function() {
             comments: []
           }).then((docRef) => { //this adds the item to the user's closet
             user_my_closet.update({
-              my_closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+              closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
             }).then((docRef)=> {
               console.log("Item added to closet");
             }).catch((error) => {
@@ -103,6 +103,7 @@ add_item_button.addEventListener("click", function() {
             });
 
             console.log("Item written with ID: ", docRef.id);
+            location.href = 'my_portfolio.html';
           }).catch((error) => {
             console.error("Error adding document: ", error);
           });
