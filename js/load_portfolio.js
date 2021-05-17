@@ -16,7 +16,7 @@ function delete_item(item_id) {
           closet: firebase.firestore.FieldValue.arrayRemove(item_id)
         });
         console.log("Document successfully deleted!");
-        location.href = 'my_portfolio.html';
+        location.reload();
       }).catch((error) => {
         console.error("Error removing document: ", error);
       });
@@ -31,6 +31,15 @@ db.collection('users').doc(user_id).get().then((s) => {
     var name = first_name + ' ' + last_name;
 
     var n = 0;
+    if (!s.data().closet.length) {
+      $("#closet_box").append(
+        `<div class="product-item">
+          <div class="product-body">
+            <a href="my_product_detail_view.html" class="job-heading pt-0"> Your closet is empty! </a>
+          </div>
+        </div>
+  `);
+    }
     s.data().closet.forEach(function(x) {
       db.collection("items").doc(x).get().then((doc) => {
         if (doc.exists) {
