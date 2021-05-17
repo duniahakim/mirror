@@ -4,6 +4,8 @@ var db = firebase.firestore();
 // if (user == null) {
 //   location.href = 'sign_in.html';
 // }
+
+
 //
 // var user_id = user.uid;
 var user_id = '1';
@@ -45,7 +47,7 @@ db.collection('items').get().then((s) => {
                           <a href="my_product_detail_view.html" class="view-btn btn-hover">Detail View</a>
                         </div>
                         <div class="action-btns-job">
-                          <a href="#" class="crt-btn crt-btn-hover mr-2"><i class="far fa-envelope"></i></a>
+                          <a href="mailto:` + x.data().user_email + `?subject = About Product` + x.data().title + `" class="crt-btn crt-btn-hover mr-2"><i class="far fa-envelope"></i></a>
                           <a href="#" class="bm-btn bm-btn-hover active"><i class="far fa-bookmark"></i></a>
                         </div>
                       </div>
