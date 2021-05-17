@@ -46,7 +46,7 @@ db.collection('items').get().then((s) => {
                             <a href="#" class="cmpny-dt">` + name + `</a>
                           </p>
                           <div class="ppdt-price-sales">
-                            <div class="ppdt-price">` +
+                            <div class="ppdt-price"> $` +
           x.data().price +
           `</div>
                           </div>
