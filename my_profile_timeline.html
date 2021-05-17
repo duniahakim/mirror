@@ -94,8 +94,11 @@
 						<div class="col-md-12">
 							<div class="banner-item-dts">
 								<div class="cover-bg-btn">
-									<input class="uploadBtn-main-input" name="cover" type="file" accept="image/x-png, image/jpeg" id="cover__input--source">
-									<label for="cover__input--source"><i class="fas fa-camera"></i><span>Cover</span></label>
+									<!-- <input class="uploadBtn-main-input" name="cover" type="file" accept="image/x-png, image/jpeg" id="cover__input--source">
+									<label for="cover__input--source"><i class="fas fa-camera"></i><span>Cover</span></label> -->
+									<ul class="user-meta-btns">
+										<li><a href="setting.html" class="profile-edit-btn btn-hover"><i class="fas fa-edit mr-2"></i>Edit</a></li>
+									</ul>
 								</div>
 								<div class="banner-content">
 									<div class="banner-media">
@@ -104,21 +107,20 @@
 											<div class="avatar-btn">
 												<input class="uploadBtn-main-input" name="cover" type="file" accept="image/x-png, image/jpeg" id="avatar__input--source">
 												<label for="avatar__input--source"><i class="fas fa-camera"></i></label>
+
 											</div>
 										</div>
 										<div class="banner-media-body">
-											<h3 class="item-user-title"> <span> Joginder </span> <span> Singh </span> </h3>
-											<div class="profile-description"> <span> email </span> </div>
-											<div class="profile-description"> <span> venmo </span> </div>
-											<div class="profile-description"><span> About Me </span> </div>
+											<h3 class="item-user-title"> <span id="first_name_profile"> Joginder </span> <span id="last_name_profile"> Singh </span> </h3>
+											<div class="profile-description"> Email: <span id="email_profile"> email </span> </div>
+											<div class="profile-description"> Venmo: <span id="venmo_profile"> venmo </span> </div>
+											<div class="profile-description"><span id="about_me_profile"> About Me </span> </div>
 											<!-- <div class="item-total-link-group">
 												<div class="item-total-product-links">
 													<a href="my_portfolio.html" class="myprofle-item-links">Products <span class="badge-alert">5</span> </a>
 												</div>
 											</div> -->
-											<ul class="user-meta-btns">
-												<li><a href="setting.html" class="profile-edit-btn btn-hover"><i class="fas fa-edit mr-2"></i>Edit</a></li>
-											</ul>
+
 										</div>
 									</div>
 								</div>
@@ -222,6 +224,7 @@
 	<!-- Footer End -->
 
 	<!-- Javascripts -->
+	<script src="js/profile_info.js"></script>
 	<script src="js/load_portfolio.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
