@@ -1,13 +1,13 @@
 var db = firebase.firestore();
-// var user = firebase.auth().currentUser;
-//
-// if (user == null) {
-//   location.href = 'sign_in.html';
-// }
-//
-// var user_id = user.uid;
+var user = firebase.auth().currentUser;
 
-var user_id = 'profileinfo';
+if (user == null) {
+  location.href = 'sign_in.html';
+}
+
+var user_id = user.uid;
+
+// var user_id = 'profileinfo';
 var items_collection_ref = db.collection("items");
 var user_my_closet = db.collection("users").doc(user_id);
 

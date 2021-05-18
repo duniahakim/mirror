@@ -1,11 +1,11 @@
 var db = firebase.firestore();
-// var user = firebase.auth().currentUser;
-//
-// if (user == null) {
-//   location.href = 'sign_in.html';
-// }
-// var user_id = user.uid;
-var user_id = 'profileinfo';
+var user = firebase.auth().currentUser;
+
+if (user == null) {
+  location.href = 'sign_in.html';
+}
+var user_id = user.uid;
+// var user_id = 'profileinfo';
 
 var url_string = window.location.href
 var url = new URL(url_string);

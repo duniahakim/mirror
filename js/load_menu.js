@@ -1,14 +1,12 @@
 var db = firebase.firestore();
-// var user = firebase.auth().currentUser;
-//
-// if (user == null) {
-//   location.href = 'sign_in.html';
-// }
-//
-// var user_id = user.uid;
-// var user_email = user.email;
+var user = firebase.auth().currentUser;
 
-var user_id = 'profileinfo';
+if (user == null) {
+  location.href = 'sign_in.html';
+}
+
+var user_id = user.uid;
+// var user_id = 'profileinfo';
 
 
 db.collection("users").doc(user_id).get().then((doc) => {

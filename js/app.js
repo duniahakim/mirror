@@ -10,3 +10,9 @@ const firebaseConfig = {
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp(firebaseConfig);
+
+var user = firebase.auth().currentUser;
+
+if (user == null) {
+  location.href = 'sign_in.html';
+}
