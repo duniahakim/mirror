@@ -3,7 +3,7 @@ var user = firebase.auth().currentUser;
 
 if (user == null) {
   console.log("need to sign in!");
-  location.href = 'sign_in.html';
+  // location.href = 'sign_in.html';
 }
 
 var user_id = user.uid;
