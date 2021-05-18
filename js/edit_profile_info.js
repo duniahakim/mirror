@@ -15,6 +15,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     var users_collection_ = db.collection("users");
     var user_info = db.collection("users").doc(user_id);
 
+    user_info.get().then((doc) => {
+      first_name_textbox.value = user_info.data().first_name;
+      last_name_textbox.value = user_info.data().last_name;
+      email_textbox.value = user_info.data().Email;
+      venmo_username.value = user_info.data().Venmo_username;
+      about.value = user_info.data().about;
+    }).catch((error) => {
+      console.error("Error adding value: ", error);
+    });
+
     save_changes.addEventListener("click", function() {
       const first_value = first_name_textbox.value;
       const last_value = last_name_textbox.value;
@@ -35,6 +45,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.error("Error adding value: ", error);
       });
     });
+    location.href = 'my_profile_timeline.html';
   } else {
     console.log("not signed in");
   }

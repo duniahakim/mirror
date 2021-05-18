@@ -42,9 +42,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
-
-
-
   } else {
     console.log("not signed in");
     // location.href = 'sign_in.html';
