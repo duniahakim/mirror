@@ -45,7 +45,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                             </div>
                             <div class="action-btns-job">
                               <a href="mailto:` + doc.data().Email + `?subject = About Product ` + x.data().title + `" class="crt-btn crt-btn-hover mr-2"><i class="far fa-envelope"></i></a>
-                              <a href="#" class="bm-btn bm-btn-hover active"><i class="far fa-bookmark"></i></a>
                             </div>
                           </div>
                         </div>
@@ -68,3 +67,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("not signed in");
   }
 });
+
+// for saving
+// <a href="#" class="bm-btn bm-btn-hover active"><i class="far fa-bookmark"></i></a>
