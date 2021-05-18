@@ -88,8 +88,7 @@ add_item_button.addEventListener("click", function() {
             brand: brand_value,
             color: color_value,
             photo: url,
-            user: user_id,
-            comments: []
+            user: user_id
           }).then((docRef) => { //this adds the item to the user's closet
             user_my_closet.update({
               closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
