@@ -16,10 +16,8 @@ function show_menu_info(user_id) {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    console.log("signed in");
     var user = firebase.auth().currentUser;
     var user_id = user.uid;
-    console.log(user_id);
 
     db.collection('users').doc(user_id).get().then((doc) => {
         if (!doc.exists) {
@@ -32,11 +30,9 @@ firebase.auth().onAuthStateChanged(function(user) {
             closet: [],
             saved: []
           });
-          console.log("created");
           setTimeout(show_menu_info, 300, user_id);
         }
         else {
-          console.log("existing");
           show_menu_info(user_id)
         }
     }).catch((error) => {
