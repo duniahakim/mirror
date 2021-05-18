@@ -2,12 +2,13 @@ var db = firebase.firestore();
 var user = firebase.auth().currentUser;
 console.log(user);
 
-firebase.auth().onAuthStateChanged(user => {
-  if (!user) {
-    console.log("made it! need to sign in!");
-    // location.href = 'sign_in.html';
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("signed in");
+  } else {
+    console.log("not signed in");
   }
-})
+});
 
 var user_id = user.uid;
 // var user_id = 'profileinfo';
