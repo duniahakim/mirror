@@ -8,22 +8,6 @@ var user = firebase.auth().currentUser;
 var user_id = user.uid;
 // var user_id = 'profileinfo';
 
-db.collection('users').doc(user_id).get().then((doc) => {
-    if (!doc.exists) {
-      db.collection('users').doc(user_id).set({
-        Email: user.email,
-        first_name: user.displayName,
-        last_name: '',
-        about: '',
-        Venmo_username: '',
-        closet: [],
-        saved: []
-      });
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
-
 
 db.collection('items').get().then((s) => {
   var n = 0;
