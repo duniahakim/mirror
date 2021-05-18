@@ -9,7 +9,7 @@ var user_id = user.uid;
 // var user_id = 'profileinfo';
 
 db.collection('users').doc(user_id).get().then((doc) => {
-    if (! doc.exists) {
+    if (!doc.exists) {
       db.collection('users').doc(user_id).set({
         Email: user.email,
         first_name: user.displayName,
