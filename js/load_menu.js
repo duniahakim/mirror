@@ -18,8 +18,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("signed in");
     var user = firebase.auth().currentUser;
-    console.log(user);
     var user_id = user.uid;
+    console.log(user_id);
 
     db.collection('users').doc(user_id).get().then((doc) => {
         if (!doc.exists) {
@@ -36,6 +36,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           setTimeout(show_menu_info, 300, user_id);
         }
         else {
+          console.log("existing");
           show_menu_info(user_id)
         }
     }).catch((error) => {
