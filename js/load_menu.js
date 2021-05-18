@@ -4,7 +4,7 @@ console.log(user);
 
 firebase.auth().onAuthStateChanged(user => {
   if (!user) {
-    console.log("need to sign in!");
+    console.log("made it! need to sign in!");
     // location.href = 'sign_in.html';
   }
 })
