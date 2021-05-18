@@ -55,7 +55,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                       <span class="product-portfolio-price">$` + doc.data().price + `</span>
                     </div>
                     <div class="portfolio_actions">
-                      <a class="product-btn-action" type="button" onClick="delete_item(\'` + user_id + `,` + doc.id + `\')" > Delete </a>
+                      <a class="product-btn-action" type="button" onClick="delete_item(\'` + user_id + `\',\'` + doc.id + `\')" > Delete </a>
                     </div>
                   </div>
                 </div>
