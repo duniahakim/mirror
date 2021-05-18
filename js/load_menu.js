@@ -1,6 +1,6 @@
 var db = firebase.firestore();
 
-function show_menu_info() {
+function show_menu_info(user_id) {
   db.collection("users").doc(user_id).get().then((doc) => {
     if (doc.exists) {
       const first_name = doc.data().first_name;
@@ -33,12 +33,16 @@ firebase.auth().onAuthStateChanged(function(user) {
             saved: []
           });
           console.log("created");
+          setTimeout(show_menu_info, 300, user_id);
+        }
+        else {
+          show_menu_info(user_id)
         }
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
 
-    setTimeout(show_menu_info, 300);
+
 
   } else {
     console.log("not signed in");
