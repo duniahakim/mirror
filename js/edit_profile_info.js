@@ -41,11 +41,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       }).then(() => {
         console.log("Document successfully updated!");
+        location.href = 'my_profile_timeline.html';
       }).catch((error) => {
         console.error("Error adding value: ", error);
       });
     });
-    location.href = 'my_profile_timeline.html';
   } else {
     console.log("not signed in");
   }
