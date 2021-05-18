@@ -44,6 +44,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
   } else {
     console.log("not signed in");
-    // location.href = 'sign_in.html';
+    location.href = 'sign_in.html';
   }
 });
