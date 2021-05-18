@@ -1,10 +1,13 @@
 var db = firebase.firestore();
 var user = firebase.auth().currentUser;
+console.log(user);
 
-if (user == null) {
-  console.log("need to sign in!");
-  // location.href = 'sign_in.html';
-}
+firebase.auth().onAuthStateChanged(user => {
+  if (!user) {
+    console.log("need to sign in!");
+    // location.href = 'sign_in.html';
+  }
+})
 
 var user_id = user.uid;
 // var user_id = 'profileinfo';
