@@ -1,5 +1,19 @@
 var db = firebase.firestore();
 
+function show_menu_info() {
+  db.collection("users").doc(user_id).get().then((doc) => {
+    if (doc.exists) {
+      const first_name = doc.data().first_name;
+      const last_name = doc.data().last_name;
+      const email = doc.data().Email;
+
+      document.getElementById('first_name_menu').innerHTML = first_name;
+      document.getElementById('last_name_menu').innerHTML = last_name;
+      document.getElementById('email_menu').innerHTML = email;
+    }
+  });
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("signed in");
@@ -18,23 +32,16 @@ firebase.auth().onAuthStateChanged(function(user) {
             closet: [],
             saved: []
           });
+          console.log("created");
         }
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
 
-    db.collection("users").doc(user_id).get().then((doc) => {
-      if (doc.exists) {
-        const first_name = doc.data().first_name;
-        const last_name = doc.data().last_name;
-        const email = doc.data().Email;
+    setTimeout(show_menu_info, 300);
 
-        document.getElementById('first_name_menu').innerHTML = first_name;
-        document.getElementById('last_name_menu').innerHTML = last_name;
-        document.getElementById('email_menu').innerHTML = email;
-      }
-    });
   } else {
     console.log("not signed in");
+    // location.href = 'sign_in.html';
   }
 });
