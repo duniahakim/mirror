@@ -1,10 +1,10 @@
 var db = firebase.firestore();
-var user = firebase.auth().currentUser;
-console.log(user);
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("signed in");
+    var user = firebase.auth().currentUser;
+    console.log(user);
   } else {
     console.log("not signed in");
   }
