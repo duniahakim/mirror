@@ -25,6 +25,14 @@
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 
+		<!-- Firestore  -->
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+		<script src="js/app.js"> </script>
+
+
 	</head>
 
 <body>
@@ -61,8 +69,8 @@
 											<img class="ft-plus-square icon-bg-circle bg-cyan mr-0" src="images/left-imgs/img-1.jpg" alt="">
 										</div>
 										<div class="media-body">
-											<h6 class="media-heading text-16">Joginder Singh</h6>
-											<p class="email-text font-small-3">joginder@example.com</p>
+											<h6 class="media-heading text-16"><span id="first_name_menu"> </span> <span id="last_name_menu"> </span></h6>
+											<p class="email-text font-small-3"><span id="email_menu">  </span></p>
 											<a href="my_profile_timeline.html" class="view-p-link font-small-4">View Profile</a>
 										</div>
 									</div>
@@ -226,6 +234,7 @@
 	<!-- Footer End -->
 
 	<!-- Javascripts -->
+	<script src="js/load_menu.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/OwlCarousel/owl.carousel.js"></script>

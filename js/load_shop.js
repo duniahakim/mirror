@@ -1,14 +1,29 @@
 var db = firebase.firestore();
-// var user = firebase.auth().currentUser;
-//
+var user = firebase.auth().currentUser;
+
 // if (user == null) {
+//   console.log("need to sign in!");
 //   location.href = 'sign_in.html';
 // }
+var user_id = user.uid;
+// var user_id = 'profileinfo';
 
+db.collection('users').doc(user_id).get().then((doc) => {
+    if (! doc.exists) {
+      db.collection('users').doc(user_id).set({
+        Email: user.email,
+        first_name: user.displayName,
+        last_name: '',
+        about: '',
+        Venmo_username: '',
+        closet: [],
+        saved: []
+      });
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
 
-//
-// var user_id = user.uid;
-var user_id = '1';
 
 db.collection('items').get().then((s) => {
   var n = 0;
@@ -34,7 +49,7 @@ db.collection('items').get().then((s) => {
                             <a href="#" class="cmpny-dt">` + name + `</a>
                           </p>
                           <div class="ppdt-price-sales">
-                            <div class="ppdt-price">` +
+                            <div class="ppdt-price"> $` +
           x.data().price +
           `</div>
                           </div>
@@ -44,10 +59,10 @@ db.collection('items').get().then((s) => {
                     <div class="post-meta">
                       <div class="job-actions">
                         <div class="aplcnts_15">
-                          <a href="my_product_detail_view.html" class="view-btn btn-hover">Detail View</a>
+                          <a href="my_product_detail_view.html?item=` + x.id + `" class="view-btn btn-hover">Detail View</a>
                         </div>
                         <div class="action-btns-job">
-                          <a href="mailto:` + x.data().user_email + `?subject = About Product` + x.data().title + `" class="crt-btn crt-btn-hover mr-2"><i class="far fa-envelope"></i></a>
+                          <a href="mailto:` + doc.data().Email + `?subject = About Product ` + x.data().title + `" class="crt-btn crt-btn-hover mr-2"><i class="far fa-envelope"></i></a>
                           <a href="#" class="bm-btn bm-btn-hover active"><i class="far fa-bookmark"></i></a>
                         </div>
                       </div>

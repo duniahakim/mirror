@@ -1,4 +1,8 @@
 var db = firebase.firestore();
+var user = firebase.auth().currentUser;
+
+var user_id = user.uid;
+// var user_id = 'profileinfo';
 
 const first_name_textbox = document.querySelector("#first_name_textbox");
 const last_name_textbox = document.querySelector("#last_name_textbox");
@@ -8,9 +12,9 @@ const about = document.querySelector("#about");
 const save_changes = document.querySelector("#save_changes_button");
 
 var users_collection_ = db.collection("users");
-var user_info = db.collection("users").doc("profileinfo");
+var user_info = db.collection("users").doc(user_id);
 
-save_changes.addEventListener("click", function() {};
+save_changes.addEventListener("click", function() {
   const first_value = first_name_textbox.value;
   const last_value = last_name_textbox.value;
   const email_value = email_textbox.value;
@@ -24,11 +28,9 @@ save_changes.addEventListener("click", function() {};
     Venmo_username: venmo_value,
     about: about_value,
 
-  }).then((docRef) => { //this adds the item to the user's closet
-    console.log("Item written with ID: ", docRef.id);
+  }).then(() => {
+    console.log("Document successfully updated!");
   }).catch((error) => {
     console.error("Error adding value: ", error);
   });
 });
-
-

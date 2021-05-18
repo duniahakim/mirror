@@ -1,15 +1,10 @@
 var db = firebase.firestore();
-// var user = firebase.auth().currentUser;
-//
-// if (user == null) {
-//   location.href = 'sign_in.html';
-// }
-//
-// var user_id = user.uid;
-// var user_email = user.email;
+var user = firebase.auth().currentUser;
 
-var user_id = '1';
-var user_email = 'duniahakim@gmail.com';
+
+var user_id = user.uid;
+
+// var user_id = 'profileinfo';
 var items_collection_ref = db.collection("items");
 var user_my_closet = db.collection("users").doc(user_id);
 
@@ -90,11 +85,10 @@ add_item_button.addEventListener("click", function() {
             brand: brand_value,
             color: color_value,
             photo: url,
-            user: user_id,
-            user_email: user_email
+            user: user_id
           }).then((docRef) => { //this adds the item to the user's closet
             user_my_closet.update({
-              my_closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+              closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
             }).then((docRef)=> {
               console.log("Item added to closet");
             }).catch((error) => {
@@ -102,6 +96,7 @@ add_item_button.addEventListener("click", function() {
             });
 
             console.log("Item written with ID: ", docRef.id);
+            location.href = 'my_portfolio.html';
           }).catch((error) => {
             console.error("Error adding document: ", error);
           });
