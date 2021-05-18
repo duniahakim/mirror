@@ -23,10 +23,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                         <div class="posts-list">
                           <div class="feed-shared-product-dt">
                             <div class="pdct-img">
-                              <a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-w bg-cyan mr-0" src=` + x.data().photo + `alt=""></a>
+                              <a href="my_product_detail_view.html?item=` + x.id + `"><img class="ft-plus-square product-bg-w bg-cyan mr-0" src=` + x.data().photo + `alt=""></a>
                             </div>
                             <div class="author-dts pp-20">
-                              <a href="my_product_detail_view.html" class="job-heading pp-title">` + x.data().title + `</a>
+                              <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pp-title">` + x.data().title + `</a>
                               <p class="notification-text font-small-4">
                                 <a href="#" class="cmpny-dt">` + name + `</a>
                               </p>

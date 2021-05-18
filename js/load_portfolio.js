@@ -1,25 +1,26 @@
 var db = firebase.firestore();
 
+function delete_item(item_id) {
+  db.collection('items').doc(item_id).get().then((doc) => {
+    if (doc.exists) {
+      db.collection('items').doc(item_id).delete().then(() => {
+        db.collection('users').doc(user_id).update({
+          closet: firebase.firestore.FieldValue.arrayRemove(item_id)
+        });
+        console.log("Document successfully deleted!");
+        location.reload();
+      }).catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+    }
+  });
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var user_id = user.uid;
     // var user_id = 'profileinfo';
 
-    function delete_item(item_id) {
-      db.collection('items').doc(item_id).get().then((doc) => {
-        if (doc.exists) {
-          db.collection('items').doc(item_id).delete().then(() => {
-            db.collection('users').doc(user_id).update({
-              closet: firebase.firestore.FieldValue.arrayRemove(item_id)
-            });
-            console.log("Document successfully deleted!");
-            location.reload();
-          }).catch((error) => {
-            console.error("Error removing document: ", error);
-          });
-        }
-      });
-    }
 
     db.collection('users').doc(user_id).get().then((s) => {
       if (s.exists) {
