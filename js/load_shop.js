@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         <div class="posts-list">
                           <div class="feed-shared-product-dt">
                             <div class="pdct-img">
-                              <a href="my_product_detail_view.html?item=` + x.id + `"><img class="ft-plus-square product-bg-w bg-cyan mr-0" src=` + x.data().photo + `alt=""></a>
+                              <a href="my_product_detail_view.html?item=` + x.id + `"><img id="` + x.id + `" class="ft-plus-square product-bg-w bg-cyan mr-0" alt=""></a>
                             </div>
                             <div class="author-dts pp-20">
                               <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pp-title">` + x.data().title + `</a>
@@ -52,6 +52,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     </div>
                   </div>
           `);
+          document.querySelector("#" + x.id).src = x.data().photo;
           } else {
             console.log("No such document!");
           }
