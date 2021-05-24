@@ -57,10 +57,10 @@ firebase.auth().onAuthStateChanged(function(user) {
               $("#closet_box").append(
                 `<div class="product-item">
                   <div class="product-left">
-                    <a href="my_product_detail_view.html"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src=` + doc.data().photo + ` alt=""></a>
+                    <a href="my_product_detail_view.html?item=` + x.id + `"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src=` + doc.data().photo + ` alt=""></a>
                   </div>
                   <div class="product-body">
-                    <a href="my_product_detail_view.html" class="job-heading pt-0">` + doc.data().title + `</a>
+                    <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pt-0">` + doc.data().title + `</a>
                     <p class="notification-text font-small-4">
                       <a href="#" class="cmpny-dt2">` + name + `</a>
                     </p>
