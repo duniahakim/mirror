@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     const first_name_textbox = document.querySelector("#first_name_textbox");
     const last_name_textbox = document.querySelector("#last_name_textbox");
-    // const email_textbox = document.querySelector("#email_textbox");
+    const email_textbox = document.querySelector("#email_textbox");
     const venmo_username = document.querySelector("#venmo_username");
     const about = document.querySelector("#about");
     const save_changes = document.querySelector("#save_changes_button");
@@ -22,9 +22,9 @@ firebase.auth().onAuthStateChanged(function(user) {
       if (doc.data().last_name) {
         last_name_textbox.value = doc.data().last_name;
       }
-      // if (doc.data().Email) {
-      //   email_textbox.value = doc.data().Email;
-      // }
+      if (doc.data().Email) {
+        email_textbox.value = doc.data().Email;
+      }
       if (doc.data().Venmo_username) {
         venmo_username.value = doc.data().Venmo_username;
       }
