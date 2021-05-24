@@ -16,11 +16,21 @@ firebase.auth().onAuthStateChanged(function(user) {
     var user_info = db.collection("users").doc(user_id);
 
     user_info.get().then((doc) => {
-      first_name_textbox.value = doc.data().first_name;
-      last_name_textbox.value = doc.data().last_name;
-      email_textbox.value = doc.data().Email;
-      venmo_username.value = doc.data().Venmo_username;
-      about.value = doc.data().about;
+      if (doc.data().first_name) {
+        first_name_textbox.value = doc.data().first_name;
+      }
+      if (doc.data().last_name) {
+        last_name_textbox.value = doc.data().last_name;
+      }
+      if (doc.data().Email) {
+        email_textbox.value = doc.data().Email;
+      }
+      if (doc.data().Venmo_username) {
+        venmo_username.value = doc.data().Venmo_username;
+      }
+      if (doc.data().about) {
+        about.value = doc.data().about;
+      }
     }).catch((error) => {
       console.error("Error adding value: ", error);
     });
