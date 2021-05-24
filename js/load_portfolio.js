@@ -58,13 +58,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         s.data().closet.forEach(function(x) {
           db.collection("items").doc(x).get().then((doc) => {
             if (doc.exists) {
+              const sold = doc.data().sold;
+              var sold_text = ""
+              if (sold) {
+                sold_text = "SOLD! " + doc.data().title;
+              }
               $("#closet_box").append(
                 `<div class="product-item">
                   <div class="product-left">
                     <a href="my_product_detail_view.html?item=` + x.id + `"><img class="ft-plus-square product-bg-circle bg-cyan mr-0" src=` + doc.data().photo + ` alt=""></a>
                   </div>
                   <div class="product-body">
-                    <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pt-0">` + doc.data().title + `</a>
+                    <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pt-0">` + sold_text + doc.data().title + `</a>
                     <p class="notification-text font-small-4">
                       <a href="#" class="cmpny-dt2">` + name + `</a>
                     </p>
