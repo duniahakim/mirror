@@ -88,18 +88,19 @@ firebase.auth().onAuthStateChanged(function(user) {
                 user: user_id,
                 sold: false
               }).then((docRef) => { //this adds the item to the user's closet
-                db.collection("data").doc("added_items").update({
-                  number: firebase.firestore.FieldValue.increment(1),
-                  titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
-                }).then((docRef)=> {
-                  console.log("items added incremented!");
+                console.log(docRef);
+                user_my_closet.update({
+                  closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+                }).then((closetDocRef)=> {
+                  console.log("Item added to closet");
                 }).catch((error) => {
                   console.error("Error adding document: ", error);
                 });
-                user_my_closet.update({
-                  closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
-                }).then((docRef)=> {
-                  console.log("Item added to closet");
+                db.collection("data").doc("added_items").update({
+                  number: firebase.firestore.FieldValue.increment(1),
+                  titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
+                }).then((dataDocRef)=> {
+                  console.log("items added incremented!");
                 }).catch((error) => {
                   console.error("Error adding document: ", error);
                 });
