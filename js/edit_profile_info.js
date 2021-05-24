@@ -38,13 +38,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     save_changes.addEventListener("click", function() {
       const first_value = first_name_textbox.value;
       const last_value = last_name_textbox.value;
-      // const email_value = email_textbox.value;
+      const email_value = email_textbox.value;
       const venmo_value = venmo_username.value;
       const about_value = about.value;
 
       user_info.update({
         first_name: first_value,
         last_name: last_value,
+        Email: email_value,
         Venmo_username: venmo_value,
         about: about_value,
 
