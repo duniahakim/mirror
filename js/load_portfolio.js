@@ -21,7 +21,7 @@ function list_item_as_sold(user_id, item_id) {
     sold: true
   }).then(() => {
     db.collection("data").doc("sold_items").update({
-      number: db.FieldValue.increment(1)
+      number: firebase.firestore.FieldValue.increment(1)
     })
     console.log("Item marked as sold!");
   }).catch((error) => {
