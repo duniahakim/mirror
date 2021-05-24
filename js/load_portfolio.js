@@ -16,6 +16,19 @@ function delete_item(user_id, item_id) {
   });
 }
 
+function list_item_as_sold(user_id, item_id) {
+  db.collection("items").doc(item_id).update({
+    sold: true
+  }).then(() => {
+    db.collection("data").doc("sold_items").update({
+      number: db.FieldValue.increment(1)
+    })
+    console.log("Item marked as sold!");
+  }).catch((error) => {
+    console.error("Error updating document: ", error);
+  });
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var user_id = user.uid;
@@ -56,6 +69,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     </div>
                     <div class="portfolio_actions">
                       <a class="product-btn-action" type="button" onClick="delete_item(\'` + user_id + `\',\'` + doc.id + `\')" > Delete </a>
+                      <a class="product-btn-action" type="button" onClick="list_item_as_sold(\'` + user_id + `\',\'` + doc.id + `\')" > Mark as sold!</a>
                     </div>
                   </div>
                 </div>

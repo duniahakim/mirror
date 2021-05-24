@@ -16,6 +16,11 @@ firebase.auth().onAuthStateChanged(function(user) {
             var first_name = doc.data().first_name;
             var last_name = doc.data().last_name;
             var name = first_name + ' ' + last_name;
+            const sold = doc.data().sold;
+            var sold_text = ""
+            if (sold) {
+              sold_text = "SOLD! " + doc.data().title;
+            }
             $("#shop_box").append(
               `<div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="full-width mt-30">
@@ -26,7 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                               <a href="my_product_detail_view.html?item=` + x.id + `"><img id="` + x.id + `" class="ft-plus-square product-bg-w bg-cyan mr-0" alt=""></a>
                             </div>
                             <div class="author-dts pp-20">
-                              <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pp-title">` + x.data().title + `</a>
+                              <a href="my_product_detail_view.html?item=` + x.id + `" class="job-heading pp-title">` + sold_text + x.data().title + `</a>
                               <p class="notification-text font-small-4">
                                 <a href="#" class="cmpny-dt">` + name + `</a>
                               </p>

@@ -85,7 +85,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 brand: brand_value,
                 color: color_value,
                 photo: url,
-                user: user_id
+                user: user_id,
+                sold: false
               }).then((docRef) => { //this adds the item to the user's closet
                 db.collection("data").doc("added_items").update({
                   number: db.FieldValue.increment(1)
