@@ -89,7 +89,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 sold: false
               }).then((docRef) => { //this adds the item to the user's closet
                 db.collection("data").doc("added_items").update({
-                  number: db.FieldValue.increment(1)
+                  number: 1
                 }).then((docRef)=> {
                   console.log("items added incremented!");
                 }).catch((error) => {
