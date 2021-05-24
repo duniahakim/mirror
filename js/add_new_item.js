@@ -87,6 +87,13 @@ firebase.auth().onAuthStateChanged(function(user) {
                 photo: url,
                 user: user_id
               }).then((docRef) => { //this adds the item to the user's closet
+                db.collection("data").doc("added_items").update({
+                  number: firebase.firestore.FieldValue.increment(1)
+                }).then((docRef)=> {
+                  console.log("items added incremented!");
+                }).catch((error) => {
+                  console.error("Error adding document: ", error);
+                });
                 user_my_closet.update({
                   closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
                 }).then((docRef)=> {
