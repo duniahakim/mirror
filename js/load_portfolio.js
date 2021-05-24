@@ -17,15 +17,19 @@ function delete_item(user_id, item_id) {
 }
 
 function list_item_as_sold(user_id, item_id) {
-  db.collection("items").doc(item_id).update({
-    sold: true
-  }).then(() => {
-    db.collection("data").doc("sold_items").update({
-      number: firebase.firestore.FieldValue.increment(1)
-    })
-    console.log("Item marked as sold!");
-  }).catch((error) => {
-    console.error("Error updating document: ", error);
+  db.collection("items").doc(item_id).get().then((doc) => {
+    if (!doc.data().sold) {
+      db.collection("items").doc(item_id).update({
+        sold: true
+      }).then(() => {
+        db.collection("data").doc("sold_items").update({
+          number: firebase.firestore.FieldValue.increment(1)
+        })
+        console.log("Item marked as sold!");
+      }).catch((error) => {
+        console.error("Error updating document: ", error);
+      });
+    }
   });
 }
 
