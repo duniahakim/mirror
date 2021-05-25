@@ -17,9 +17,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     const item_color = document.querySelector("#new_item_color_textbox");
 
     function uploadImage() {
-      console.log("hello");
       const ref = firebase.storage().ref();
       const file = document.querySelector("#browse-photo").files[0];
+      // if file is null then reject
       const name = new Date() + "-" + file.name;
       const metadata = {
         contentType: file.type
@@ -91,7 +91,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 console.log(docRef);
                 user_my_closet.update({
                   closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
-                }).then((closetDocRef)=> {
+                }).then(() => {
                   console.log("Item added to closet");
                 }).catch((error) => {
                   console.error("Error adding document: ", error);
@@ -99,7 +99,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 db.collection("data").doc("added_items").update({
                   number: firebase.firestore.FieldValue.increment(1),
                   titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
-                }).then((dataDocRef)=> {
+                }).then(() => {
                   console.log("items added incremented!");
                 }).catch((error) => {
                   console.error("Error adding document: ", error);
