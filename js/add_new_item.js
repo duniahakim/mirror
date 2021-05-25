@@ -75,6 +75,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         contentType: file.type
       };
       const task = ref.child(name).put(file, metadata);
+      console.log("about to add item");
       task.then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
           items_collection_ref.add({ //this adds the new item to the "items" collection
@@ -88,7 +89,6 @@ firebase.auth().onAuthStateChanged(function(user) {
             user: user_id,
             sold: false
           }).then((docRef) => { //this adds the item to the user's closet
-              console.log(docRef.data());
               console.log(title_value);
               user_my_closet.update({
                 closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
@@ -106,7 +106,6 @@ firebase.auth().onAuthStateChanged(function(user) {
               }).catch((error) => {
                 console.error("Error adding document: ", error);
               });
-
               console.log("Item written with ID: ", docRef.id);
               location.href = 'my_portfolio.html';
           }).catch((error) => {
