@@ -88,7 +88,6 @@ firebase.auth().onAuthStateChanged(function(user) {
             user: user_id,
             sold: false
           }).then((docRef) => { //this adds the item to the user's closet
-            if (docRef.exists) {
               console.log(docRef.data());
               console.log(title_value);
               user_my_closet.update({
@@ -110,7 +109,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
               console.log("Item written with ID: ", docRef.id);
               location.href = 'my_portfolio.html';
-            }
           }).catch((error) => {
             console.error("Error adding document: ", error);
           });
