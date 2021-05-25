@@ -99,7 +99,7 @@ firebase.auth().onAuthStateChanged(function(user) {
               });
               db.collection("data").doc("added_items").update({
                 number: firebase.firestore.FieldValue.increment(1),
-                titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
+                titles: firebase.firestore.FieldValue.arrayUnion(title_value)
               }).then(() => {
                 console.log("items added incremented!");
               }).catch((error) => {
