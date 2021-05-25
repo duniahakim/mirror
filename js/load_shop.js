@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             const sold = x.data().sold;
             var sold_text = ""
             if (sold) {
-              sold_text = "SOLD! " + x.data().title;
+              sold_text = "SOLD! ";
             }
             $("#shop_box").append(
               `<div class="col-xl-4 col-lg-6 col-md-6">
