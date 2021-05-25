@@ -26,10 +26,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       };
       const task = ref.child(name).put(file, metadata);
       task.then(snapshot => snapshot.ref.getDownloadURL())
-          .then(url => {
-              console.log(url);
-              document.querySelector("#image").src = url;
-          }).catch(console.error);
+        .then(url => {
+          console.log(url);
+          document.querySelector("#image").src = url;
+        }).catch(console.error);
     }
 
     add_item_button.addEventListener("click", function() {
@@ -43,9 +43,9 @@ firebase.auth().onAuthStateChanged(function(user) {
       if (!title_value) {
         document.getElementById("missing-title-new-item").style.visibility = "visible";
         window.scrollTo(0, 0);
-       } else {
+      } else {
         document.getElementById("missing-title-new-item").style.visibility = "hidden";
-       }
+      }
 
       if (!price_value) {
         document.getElementById("missing-price-new-item").style.visibility = "visible";
@@ -76,41 +76,43 @@ firebase.auth().onAuthStateChanged(function(user) {
       };
       const task = ref.child(name).put(file, metadata);
       task.then(snapshot => snapshot.ref.getDownloadURL())
-          .then(url => {
-              items_collection_ref.add({ //this adds the new item to the "items" collection
-                title: title_value,
-                price: price_value,
-                size: size_value,
-                condition: condition_value,
-                brand: brand_value,
-                color: color_value,
-                photo: url,
-                user: user_id,
-                sold: false
-              }).then((docRef) => { //this adds the item to the user's closet
-                console.log(docRef);
-                user_my_closet.update({
-                  closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
-                }).then(() => {
-                  console.log("Item added to closet");
-                }).catch((error) => {
-                  console.error("Error adding document: ", error);
-                });
-                db.collection("data").doc("added_items").update({
-                  number: firebase.firestore.FieldValue.increment(1),
-                  titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
-                }).then(() => {
-                  console.log("items added incremented!");
-                }).catch((error) => {
-                  console.error("Error adding document: ", error);
-                });
-
-                console.log("Item written with ID: ", docRef.id);
-                location.href = 'my_portfolio.html';
+        .then(url => {
+          items_collection_ref.add({ //this adds the new item to the "items" collection
+            title: title_value,
+            price: price_value,
+            size: size_value,
+            condition: condition_value,
+            brand: brand_value,
+            color: color_value,
+            photo: url,
+            user: user_id,
+            sold: false
+          }).then((docRef) => { //this adds the item to the user's closet
+            if (docRef.exists) {
+              console.log(docRef.data());
+              user_my_closet.update({
+                closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+              }).then(() => {
+                console.log("Item added to closet");
               }).catch((error) => {
                 console.error("Error adding document: ", error);
               });
-          }).catch(console.error);
+              db.collection("data").doc("added_items").update({
+                number: firebase.firestore.FieldValue.increment(1),
+                titles: firebase.firestore.FieldValue.arrayUnion(docRef.data().title)
+              }).then(() => {
+                console.log("items added incremented!");
+              }).catch((error) => {
+                console.error("Error adding document: ", error);
+              });
+
+              console.log("Item written with ID: ", docRef.id);
+              location.href = 'my_portfolio.html';
+            }
+          }).catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+        }).catch(console.error);
     });
 
   } else {
