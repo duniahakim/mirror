@@ -16,22 +16,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     const item_brand = document.querySelector("#new_item_brand_textbox");
     const item_color = document.querySelector("#new_item_color_textbox");
 
-    function uploadImage() {
-      const ref = firebase.storage().ref();
-      const file = document.querySelector("#browse-photo").files[0];
-      // if file is null then reject
-      const name = new Date() + "-" + file.name;
-      const metadata = {
-        contentType: file.type
-      };
-      const task = ref.child(name).put(file, metadata);
-      task.then(snapshot => snapshot.ref.getDownloadURL())
-        .then(url => {
-          console.log(url);
-          document.querySelector("#image").src = url;
-        }).catch(console.error);
-    }
-
     add_item_button.addEventListener("click", function() {
       const title_value = item_title.value;
       const price_value = item_price.value;
@@ -70,12 +54,18 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       const ref = firebase.storage().ref();
       const file = document.querySelector("#browse-photo").files[0];
+      if (!file) {
+        document.getElementById("missing-photo-new-item").style.visibility = "visible";
+        window.scrollTo(0, 0);
+      } else {
+        document.getElementById("missing-photo-new-item").style.visibility = "hidden";
+      }
+
       const name = new Date() + "-" + file.name;
       const metadata = {
         contentType: file.type
       };
       const task = ref.child(name).put(file, metadata);
-      console.log("about to add item");
       task.then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
           items_collection_ref.add({ //this adds the new item to the "items" collection
@@ -89,11 +79,9 @@ firebase.auth().onAuthStateChanged(function(user) {
             user: user_id,
             sold: false
           }).then((docRef) => { //this adds the item to the user's closet
-              console.log(title_value);
               user_my_closet.update({
                 closet: firebase.firestore.FieldValue.arrayUnion(docRef.id)
               }).then(() => {
-                console.log("about to add to data")
                 db.collection("data").doc("added_items").update({
                   number: firebase.firestore.FieldValue.increment(1),
                   titles: firebase.firestore.FieldValue.arrayUnion(title_value)
@@ -102,11 +90,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 }).catch((error) => {
                   console.error("Error adding document: ", error);
                 });
-                console.log("Item added to closet");
               }).catch((error) => {
                 console.error("Error adding document: ", error);
               });
-              console.log("Item written with ID: ", docRef.id);
               location.href = 'my_portfolio.html';
           }).catch((error) => {
             console.error("Error adding document: ", error);
